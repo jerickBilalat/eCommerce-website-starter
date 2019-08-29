@@ -1,0 +1,119 @@
+/* ------------------------------------------------------------------- */
+/* Blue #0081db
+---------------------------------------------------------------------- */
+
+a,
+.header-widget li i,
+.menu > li a.current.with-ul:after,
+.menu > li.sfHover .with-ul:after,
+.featured-service i,
+.stage i,
+.stage span,
+#breadcrumbs ul li a:hover,
+.details li a:hover,
+.meta-tags span a:hover,
+.image-edge-content h4,
+.headline span.color,
+.menu > li a.current,
+.menu > li a:hover,
+.menu > li.sfHover a,
+a.button.border,
+button.button.border,
+.list-4 li:before,
+.list-3 li:before,
+.list-2 li:before,
+.list-1 li:before,
+.tabs-nav li a:hover,
+.close-search a:hover,
+.info-banner-fw a:hover,
+.menu li.cart-icon a:hover,
+.menu  li.search a:hover,
+.tabs-nav li.active a {
+	color: #0081db;
+}
+
+body,
+.menu > li a.current,
+.menu > li a:hover,
+.menu > li.sfHover a,
+.mega,
+.dropdown ul,
+#price-range .ui-slider .ui-slider-handle,
+a.button.border,
+button.button.border,
+a.button.border:hover,
+button.button.border:hover,
+.tabs-nav li a:hover,
+.tabs-nav li.active a,
+.custom-caption,
+.ui-accordion .ui-accordion-header-active:hover,
+.ui-accordion .ui-accordion-header-active {
+	border-color: #0081db;
+}
+
+.qtyplus:hover,
+.qtyminus:hover,
+.zeus .tp-title-wrap,
+.mfp-arrow:hover,
+#price-range .ui-slider .ui-slider-handle,
+.flex-prev:hover, 
+.flex-next:hover,
+a.button.border::before,
+button.button.border::before,
+.hover-border {
+    background: #0081db;
+}
+
+.menu ul .sfHover li a:hover,
+.mega a:hover {
+	background-color: #0081db !important;
+}
+
+#logo img,
+li.dropdown ul li a:hover,
+.menu ul .sfHover a,
+.cart-counter,
+.menu-responsive,
+a.featured-service:hover,
+.project-category figure,
+.see-all,
+.option-set li a:hover,
+.option-set li a.selected,
+.projects a .overlay:after,
+#testimonials:after,
+#backtotop a:hover,
+.service-alt a.img-hover:after,
+a.sidebar-btn,
+.sidebar-textbox.color,
+#price-range .ui-widget-header,
+.comment-by a.reply:hover,
+#small-dialog .mfp-close,
+.mfp-close:hover,
+input[type="button"],
+input[type="submit"],
+a.button,
+button.button,
+.owl-prev:hover,
+.owl-next:hover,
+a.button.dark:hover,
+button.button.dark:hover,
+table.basic-table th,
+.plan.color-2 .plan-price,
+.plan.color-2 a.button,
+.ui-accordion .ui-accordion-header-active:hover,
+.ui-accordion .ui-accordion-header-active,
+.info-banner-fw,
+.pagination ul li a.current-page,
+.pagination .current,
+.pagination ul li a:hover,
+.services-list li a.active,
+.services-list li a:hover,
+.pagination-next-prev ul li a:hover,
+mark.color {
+	background-color: #0081db;
+}
+
+
+.service .service-overlay { background-color: rgba(0,129,219,0.95); }
+
+@media (max-width: 991px) { .tabs-nav li.active a { background-color: #0081db; } }
