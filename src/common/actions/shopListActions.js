@@ -35,7 +35,13 @@ export function increaseShopListItemQuantity(productDetails, differential) {
   const { id, name, price } = productDetails;
   const updatedShopListQuantity = localShopList.increaseItemQuantity(id, differential);
   const shopListItemValue = getItemValue(price, updatedShopListQuantity);
-  const updatedItem = { id, name, price, quantity: updatedShopListQuantity, value: shopListItemValue };
+  const updatedItem = {
+    id,
+    name,
+    price,
+    quantity: updatedShopListQuantity,
+    value: shopListItemValue
+  };
   if (updatedShopListQuantity > 1) {
     toast.success('Item quantity increased');
   } else {
@@ -52,7 +58,13 @@ export function decreaseShopListItemQuantity(productDetails, differential) {
   const updatedShopListQuantity = localShopList.decreaseItemQuantity(id, differential);
   if (updatedShopListQuantity === 0) return deleteShopListItem(id);
   const shopListItemValue = getItemValue(price, updatedShopListQuantity);
-  const updatedItem = { id, name, price, quantity: updatedShopListQuantity, value: shopListItemValue };
+  const updatedItem = {
+    id,
+    name,
+    price,
+    quantity: updatedShopListQuantity,
+    value: shopListItemValue
+  };
   toast.success('Item quantity decreased');
   return {
     type: 'MODIFY_ITEM_QNTY',
@@ -118,7 +130,11 @@ export function syncShopList() {
           position: toast.POSITION.BOTTOM_LEFT
         });
         dispatch(
-          flashMessage({ status: 'notice', title: 'shopList is modified', texts: flashMessageTexts })
+          flashMessage({
+            status: 'notice',
+            title: 'shopList is modified',
+            texts: flashMessageTexts
+          })
         );
       }
       return dispatch(modifyShopListSucceeded(updatedShopList));

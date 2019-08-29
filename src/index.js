@@ -1,7 +1,7 @@
 import express from 'express';
 
 let app = require('./server').default;
-
+/* eslint-disable */
 if (module.hot) {
   module.hot.accept('./server', function() {
     console.log('🔁  HMR Reloading `./server`...');
@@ -25,3 +25,4 @@ export default express()
     }
     console.log(`> Started on port ${port}`);
   });
+/* eslint-enable */

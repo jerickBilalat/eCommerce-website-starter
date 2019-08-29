@@ -3,6 +3,7 @@ import PrdouctDetailPage from './common/containers/pdp';
 import ShoppingListPage from './common/containers/slp';
 import NotFoundPage from './common/containers/NotFoundPage';
 import App from './common/containers/App';
+
 export default [
   {
     ...App,

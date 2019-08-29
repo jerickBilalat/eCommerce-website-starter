@@ -10,16 +10,13 @@ import {
 
 class ShoppingListPage extends Component {
   render() {
-    return <h1>Shopping List Page</h1>
+    return <h1>Shopping List Page</h1>;
   }
 }
 
-const MockPromise = new Promise((resolve, reject) => {
-  return resolve('Shopping List page Data');
-})
-
-const loadData = async store => await store.dispatch(syncShopList()); // eslint-disable-line no-return-await
-
+const loadData = async store => {
+  await store.dispatch(syncShopList());
+};
 
 export default {
   component: ShoppingListPage,

@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import '../assets/css/style.css';
 import '../assets/css/blue.css';
 
-
 class App extends React.Component {
   notify = (status, message) => {
     switch (status) {

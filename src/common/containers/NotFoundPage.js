@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 const NotFoundPage = ({ staticContext = {} }) => {
   staticContext.notFound = true;
-  return (<h1>Page Not Found!!!</h1>
-  );
+  return <h1>Page Not Found!!!</h1>;
 };
 
 NotFoundPage.propTypes = {
