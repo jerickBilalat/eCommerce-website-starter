@@ -6,6 +6,7 @@ import { fetchProducts } from '../../actions/productActions';
 import { syncShopList, increaseShopListItemQuantity } from '../../actions/shopListActions';
 
 import ProductList from './productList';
+import PageSideWidget from '../psw';
 
 class ProductListPage extends Component {
   constructor(props) {
@@ -118,7 +119,7 @@ class ProductListPage extends Component {
             ) : null}
           </div>
           <div className="col-md-3 col-sm-5">
-            {/* <Widgets /> */}
+            <PageSideWidget />
             <div className="clearfix" />
             <div className="margin-bottom-40" />
           </div>
