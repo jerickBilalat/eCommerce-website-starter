@@ -135,7 +135,7 @@ const loadData = async store => {
 
 const mapStateToProps = state => {
   return {
-    products: state.products
+    products: { ...state.products }
   };
 };
 
