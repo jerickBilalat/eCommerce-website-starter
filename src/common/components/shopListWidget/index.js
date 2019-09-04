@@ -20,7 +20,7 @@ const shopListWidget = ({ shopListItems, doRemoveItem, subTotal }) => {
           {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
           Subtotal: <strong>${subTotal}</strong>
         </span>
-        <Link to="/shoppinglist" className="button gray">
+        <Link to="/shop_list" className="button gray">
           View List
         </Link>
       </div>

@@ -20,7 +20,7 @@ export default [
       },
       {
         ...ShoppingListPage,
-        path: '/shoppinglist',
+        path: '/shop_list',
         exact: true
       },
       {

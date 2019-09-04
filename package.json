@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "classnames": "^2.2.6",
     "currency.js": "^1.2.2",
     "express": "^4.15.2",
     "prop-types": "^15.6.0",
@@ -26,7 +27,6 @@
     "serialize-javascript": "^1.3.0"
   },
   "devDependencies": {
-    "razzle": "^3.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -39,6 +39,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.5.0",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "razzle": "^3.0.0"
   }
 }
