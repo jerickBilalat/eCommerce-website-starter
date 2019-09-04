@@ -1,7 +1,7 @@
 import currency from 'currency.js';
 import { toast } from 'react-toastify';
 import * as api from '../api';
-import localCart from '../components/utils/localCart';
+import localCart from '../../client/utils/localCart';
 import { MODIFY_CART_SUCCEEDED, FLASH_MESSAGE } from './types';
 
 export function flashMessage(message) {

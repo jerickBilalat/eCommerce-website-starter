@@ -223,11 +223,6 @@ function mapStateToProps(state) {
   };
 }
 
-const loadData = async store => {
-  await store.dispatch(syncCart());
-};
-
 export default {
-  component: connect(mapStateToProps)(CartPage),
-  loadData
+  component: connect(mapStateToProps)(CartPage)
 };
