@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ShopListWidget from '../../components/shopListWidget';
+import CartWidget from '../../components/cartWidget';
 import { deleteShopListItem } from '../../actions/shopListActions';
-import { getSubTotal } from '../../reducers/shopListReducer';
+import { deleteCartItem } from '../../actions/cartActions';
+import { getSubTotal } from '../../reducers/cartReducer';
 
 class Widgets extends Component {
   doRemoveLocalShopListItem = id => {
@@ -10,14 +12,23 @@ class Widgets extends Component {
     dispatch(deleteShopListItem(id));
   };
 
+  doRemoveLocalCartItem = id => {
+    const { dispatch } = this.props;
+    dispatch(deleteCartItem(id));
+  };
+
   render() {
-    const { shopList, subTotal } = this.props;
+    const { shopList, cartSubTotal, cart } = this.props;
     return (
       <React.Fragment>
+        <CartWidget
+          cartItems={cart.cartItems}
+          doRemoveItem={this.doRemoveLocalCartItem}
+          subTotal={cartSubTotal}
+        />
         <ShopListWidget
           shopListItems={shopList.listItems}
           doRemoveItem={this.doRemoveLocalShopListItem}
-          subTotal={subTotal}
         />
       </React.Fragment>
     );
@@ -27,7 +38,8 @@ class Widgets extends Component {
 function mapStateToProps(state) {
   return {
     shopList: { ...state.shopList },
-    subTotal: getSubTotal({ ...state })
+    cart: { ...state.cart },
+    cartSubTotal: getSubTotal({ ...state })
   };
 }
 
