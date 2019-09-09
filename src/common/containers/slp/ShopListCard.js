@@ -10,13 +10,12 @@ const shopListCard = ({
   value,
   products,
   deleteShopListItem,
-  increaseQuantity,
-  decreaseQuantity
+  doAddToCart
 }) => {
   const shopListItem =
     products && products.length
       ? products
-          .map(item => ({ id: item._id, images: item.images })) // eslint-disable-line no-underscore-dangle
+          .map(item => ({ id: item._id, name: item.name, images: item.images })) // eslint-disable-line no-underscore-dangle
           .filter(item => item.id === id)[0]
       : null;
   const images = shopListItem && shopListItem.images;
@@ -31,26 +30,15 @@ const shopListCard = ({
       </td>
       <td>${price}</td>
       <td>
-        <form className="qty-btns">
-          {/* todo handle keypress event for a11y */}
-          <div
-            role="button"
-            tabIndex={0}
-            className="qtyminus"
-            onClick={() => decreaseQuantity({ id, name, price }, -1)}
-            onKeyPress={() => null}
-          ></div>
-          <input type="text" name="quantity" value={quantity} className="qty" readOnly />
-          <div
-            role="button"
-            tabIndex={-1}
-            className="qtyplus"
-            onClick={() => increaseQuantity({ id, name, price }, 1)}
-            onKeyPress={() => null}
-          ></div>
-        </form>
+        <button
+          type="button"
+          className="button"
+          onClick={() => doAddToCart({ id, name, price }, 1)}
+        >
+          Add to Cart
+        </button>
       </td>
-      <td className="cart-total">${value}</td>
+      <td></td>
       <td>
         <button
           type="button"

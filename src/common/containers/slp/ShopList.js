@@ -9,13 +9,9 @@ const ShopList = ({
   formFields,
   updateFormState,
   formErrors,
-  subTotal,
-  total,
-  shippingTotal,
   submitForm,
   deleteShopListItem,
-  increaseQuantity,
-  decreaseQuantity
+  doAddToCart
 }) => {
   return (
     <React.Fragment>
@@ -30,8 +26,7 @@ const ShopList = ({
                     {...item}
                     products={products}
                     deleteShopListItem={deleteShopListItem}
-                    increaseQuantity={increaseQuantity}
-                    decreaseQuantity={decreaseQuantity}
+                    doAddToCart={doAddToCart}
                   />
                 ))
               ) : (
@@ -47,11 +42,11 @@ const ShopList = ({
           <table className="cart-table responsive-table stacktable large-only">
             <thead>
               <tr>
-                <th>Item</th>
-                <th>Description</th>
+                <th>Image</th>
+                <th>Name</th>
                 <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
+                <th></th>
+                <th></th>
                 <th />
               </tr>
             </thead>
@@ -64,8 +59,7 @@ const ShopList = ({
                     {...item}
                     products={products}
                     deleteShopListItem={deleteShopListItem}
-                    increaseQuantity={increaseQuantity}
-                    decreaseQuantity={decreaseQuantity}
+                    doAddToCart={doAddToCart}
                   />
                 ))
               ) : (

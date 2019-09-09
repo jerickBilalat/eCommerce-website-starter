@@ -1,19 +1,17 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import currency from 'currency.js';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
-import { getSubTotal, getShippingTotal } from '../../reducers/shopListReducer';
 import FlashMessage from '../../components/FlashMessage';
 import {
   clearShopList,
   flashMessage,
-  syncShopList,
-  deleteShopListItem,
-  increaseShopListItemQuantity,
-  decreaseShopListItemQuantity
+  getLocalShopListToStore,
+  deleteLocalShopListItem
 } from '../../actions/shopListActions';
 import { fetchProducts } from '../../actions/productActions';
+import {increaseCartItemQuantity} from '../../actions/cartActions';
 import ScrollTo from '../../components/ScrollTo';
 
 import ShopList from './ShopList';
@@ -32,7 +30,7 @@ class ShopListPage extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(fetchProducts(0, 1000, [], []));
-    dispatch(syncShopList());
+    dispatch(getLocalShopListToStore());
   }
 
   updateFormState = event => {
@@ -105,17 +103,12 @@ class ShopListPage extends Component {
 
   doDeleteShopListItem = id => {
     const { dispatch } = this.props;
-    dispatch(deleteShopListItem(id));
+    dispatch(deleteLocalShopListItem(id));
   };
 
-  increaseQuantity = (productDetials, differential) => {
+  doAddToCart = (productDetials, differential) => {
     const { dispatch } = this.props;
-    dispatch(increaseShopListItemQuantity(productDetials, differential));
-  };
-
-  decreaseQuantity = (productDetials, differential) => {
-    const { dispatch } = this.props;
-    dispatch(decreaseShopListItemQuantity(productDetials, differential));
+    dispatch(increaseCartItemQuantity(productDetials, differential));
   };
 
   renderContent = () => {
@@ -130,12 +123,8 @@ class ShopListPage extends Component {
           submitForm={this.submitForm}
           shopListItems={props.shopList.listItems}
           products={props.toShop}
-          subTotal={props.subTotal}
-          shippingTotal={props.shippingTotal}
-          total={props.total}
           deleteShopListItem={this.doDeleteShopListItem}
-          increaseQuantity={this.increaseQuantity}
-          decreaseQuantity={this.decreaseQuantity}
+          doAddToCart={this.doAddToCart}
         />
       </Fragment>
     );
@@ -188,24 +177,17 @@ class ShopListPage extends Component {
 }
 
 function mapStateToProps(state) {
-  const subTotal = getSubTotal({ ...state });
-  const shippingTotal = getShippingTotal({ ...state });
-  const total = currency(subTotal)
-    .add(shippingTotal)
-    .format();
   return {
     shopList: { ...state.shopList },
     flashMessage: state.shopList.flashMessage,
-    subTotal,
-    shippingTotal,
-    total,
-    toShop: { ...state.products.toShop }
+    toShop: [...state.products.toShop]
   };
 }
 
-const loadData = async store => await store.dispatch(syncShopList()); // eslint-disable-line no-return-await
+ShopListPage.propTypes = {
+  toShop: PropTypes.arrayOf(PropTypes.object).isRequired
+};
 
 export default {
-  component: connect(mapStateToProps)(ShopListPage),
-  loadData
+  component: connect(mapStateToProps)(ShopListPage)
 };

@@ -1,5 +1,9 @@
-import currency from 'currency.js';
-import { MODIFY_SHOPLIST_SUCCEEDED, FLASH_MESSAGE } from '../actions/types';
+import {
+  MODIFY_SHOPLIST_SUCCEEDED,
+  FLASH_MESSAGE,
+  DELETE_SHOPLIST_ITEM,
+  ADD_ITEM_TO_SHOPLIST
+} from '../actions/types';
 
 const initialState = {
   listItems: [],
@@ -15,7 +19,7 @@ export default function(state = initialState, action) {
         ...state,
         listItems: action.payload
       };
-    case 'MODIFY_ITEM_QNTY': {
+    case ADD_ITEM_TO_SHOPLIST: {
       const listItemIds = state.listItems.map(item => item.id);
       const updatedListItems = state.listItems.map(item => item);
       if (listItemIds.includes(action.payload.id)) {
@@ -30,7 +34,7 @@ export default function(state = initialState, action) {
         listItems: updatedListItems
       };
     }
-    case 'DELETE_ITEM':
+    case DELETE_SHOPLIST_ITEM:
       return {
         ...state,
         listItems: state.listItems.filter(item => item.id !== action.payload)
@@ -42,18 +46,3 @@ export default function(state = initialState, action) {
       return state;
   }
 }
-
-// Selectors
-const reducer = function reduceListItemPrices(accumulator, currentValue) {
-  const value = currency(accumulator).add(currentValue);
-  return value.format();
-};
-export function getSubTotal(state) {
-  return state.shopList.listItems.map(item => item.value.toString()).reduce(reducer, '0');
-}
-
-export function getShippingTotal(state) {
-  return '0';
-}
-
-export function getTotal() {}

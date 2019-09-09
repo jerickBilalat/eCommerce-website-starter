@@ -6,7 +6,7 @@ import ProductDetail from './productDetail';
 import Widgets from '../psw';
 
 import { getProductDetail, clearProductDetail } from '../../actions/productActions';
-import { increaseShopListItemQuantity, syncShopList } from '../../actions/shopListActions';
+import { addLocalShopListItem } from '../../actions/shopListActions';
 
 class productDetailPage extends Component {
   componentDidMount() {
@@ -30,7 +30,6 @@ class productDetailPage extends Component {
       });
     }
 
-    dispatch(syncShopList());
   }
 
   componentWillUnmount() {
@@ -40,7 +39,7 @@ class productDetailPage extends Component {
 
   doIncreaseShopListItemQuantity = (prodDetail, differential) => {
     const { dispatch } = this.props;
-    dispatch(increaseShopListItemQuantity(prodDetail, differential));
+    dispatch(addLocalShopListItem(prodDetail, differential));
   };
 
   render() {

@@ -12,3 +12,5 @@ export const MODIFY_CART_SUCCEEDED = 'modify_cart_succeeded';
 export const FLASH_MESSAGE = 'flash_message';
 
 export const MODIFY_SHOPLIST_SUCCEEDED = 'MODIFY_SHOPLIST_SUCCEEDED';
+export const DELETE_SHOPLIST_ITEM = 'DELETE_SHOPLIST_ITEM';
+export const ADD_ITEM_TO_SHOPLIST = 'ADD_ITEM_TO_SHOPLIST'

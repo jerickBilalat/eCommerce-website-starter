@@ -44,7 +44,7 @@ const ProductDetail = ({ prodDetail: { _id, name, price, images }, increaseQuant
                 className="button"
                 onClick={() => increaseQuantity(prodDetail, 1)}
               >
-                Add to Cart
+                Add to List
               </button>
             </div>
           </div>

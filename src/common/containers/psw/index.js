@@ -2,14 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ShopListWidget from '../../components/shopListWidget';
 import CartWidget from '../../components/cartWidget';
-import { deleteShopListItem } from '../../actions/shopListActions';
-import { deleteCartItem } from '../../actions/cartActions';
+import { deleteLocalShopListItem, getLocalShopListToStore } from '../../actions/shopListActions';
+import { deleteCartItem, syncCart } from '../../actions/cartActions';
 import { getSubTotal } from '../../reducers/cartReducer';
 
 class Widgets extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(syncCart());
+    dispatch(getLocalShopListToStore());
+  }
+
   doRemoveLocalShopListItem = id => {
     const { dispatch } = this.props;
-    dispatch(deleteShopListItem(id));
+    dispatch(deleteLocalShopListItem(id));
   };
 
   doRemoveLocalCartItem = id => {

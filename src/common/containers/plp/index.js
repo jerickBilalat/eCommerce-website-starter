@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { fetchProducts } from '../../actions/productActions';
-import { syncShopList, increaseShopListItemQuantity } from '../../actions/shopListActions';
+import { addLocalShopListItem } from '../../actions/shopListActions';
 
 import ProductList from './productList';
 import PageSideWidget from '../psw';
@@ -25,7 +25,7 @@ class ProductListPage extends Component {
 
   componentDidMount() {
     const { skip, limit, filters } = this.state;
-    const { fetchProducts: getProducts } = this.props;
+    const { dispatch } = this.props;
     /* eslint-disable no-underscore-dangle */
     if (
       window.__PRELOADED_STATE__ &&
@@ -36,17 +36,15 @@ class ProductListPage extends Component {
       delete window.__PRELOADED_STATE__;
       /* eslint-enable no-underscore-dangle */
     } else {
-      getProducts(skip, limit, filters);
+      dispatch(fetchProducts(skip, limit, filters));
     }
-
-    syncShopList();
   }
 
   doLoadMoreProducts = () => {
     const { skip, limit, filters } = this.state;
-    const { products, fetchProducts: getProducts } = this.props;
+    const { products, dispatch } = this.props;
     const newSkip = skip + limit;
-    getProducts(newSkip, limit, filters, products.toShop);
+    dispatch(fetchProducts(newSkip, limit, filters, products.toShop));
 
     // todo: refactor to use thunks instead of promises
     this.setState({
@@ -56,7 +54,7 @@ class ProductListPage extends Component {
 
   doIncreaseShopListItemQuantity = (id, name, price, quantity) => {
     const { dispatch } = this.props;
-    return dispatch(increaseShopListItemQuantity({ id, name, price }, quantity));
+    return dispatch(addLocalShopListItem({ id, name, price }, quantity));
   };
 
   render() {
@@ -140,9 +138,6 @@ const mapStateToProps = state => {
 };
 
 export default {
-  component: connect(
-    mapStateToProps,
-    { fetchProducts, syncShopList }
-  )(ProductListPage),
+  component: connect(mapStateToProps)(ProductListPage),
   loadData
 };

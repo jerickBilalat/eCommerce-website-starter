@@ -10,8 +10,7 @@ const shopListCardMobile = ({
   value,
   products,
   deleteShopListItem,
-  increaseQuantity,
-  decreaseQuantity
+  doAddToCart
 }) => {
   const shopListItem =
     products && products.length
@@ -34,7 +33,7 @@ const shopListCardMobile = ({
         </td>
       </tr>
       <tr>
-        <td className="st-key">Description</td>
+        <td className="st-key">Name</td>
         <td className="st-val">
           <Link to={`/product_detail/${id}`}>{name}</Link>
         </td>
@@ -44,30 +43,16 @@ const shopListCardMobile = ({
         <td className="st-val">${price}</td>
       </tr>
       <tr>
-        <td className="st-key">Quantity</td>
+        <td className="st-key"></td>
         <td className="st-val">
-          <form className="qty-btns">
-            <div
-              className="qtyminus"
-              role="button"
-              tabIndex={0}
-              onClick={() => decreaseQuantity({ id, name, price }, -1)}
-              onKeyPress={() => null}
-            ></div>
-            <input type="text" name="quantity" value={quantity} className="qty" readOnly />
-            <div
-              role="button"
-              tabIndex={0}
-              className="qtyplus"
-              onClick={() => increaseQuantity({ id, name, price }, 1)}
-              onKeyPress={() => null}
-            ></div>
-          </form>
+          <button
+            type="button"
+            className="button"
+            onClick={() => doAddToCart({ id, name, price }, 1)}
+          >
+            Add to Cart
+          </button>
         </td>
-      </tr>
-      <tr>
-        <td className="st-key">Total</td>
-        <td className="st-val">${value}</td>
       </tr>
       <tr>
         <td className="st-key"></td>
