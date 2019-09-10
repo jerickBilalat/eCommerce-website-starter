@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
 import ErrorBoundary from '../components/ErrorBoundry';
 import Footer from '../components/Footer';
+import Header from './header';
 
 import 'react-toastify/dist/ReactToastify.min.css';
 import '../assets/css/style.css';
@@ -39,6 +40,7 @@ class App extends React.Component {
       <Fragment>
         <ToastContainer />
         <div className="container">
+          <Header />
           <ErrorBoundary>{renderRoutes(route.routes)}</ErrorBoundary>
         </div>
         <Footer />
