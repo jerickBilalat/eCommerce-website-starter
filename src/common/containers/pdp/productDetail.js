@@ -2,7 +2,11 @@ import React from 'react';
 import DefaultImageSrc from '../../assets/images/shop-09a.jpg';
 import ScrollTo from '../../components/ScrollTo';
 
-const ProductDetail = ({ prodDetail: { _id, name, price, images }, increaseQuantity }) => {
+const ProductDetail = ({
+  prodDetail: { _id, name, price, images },
+  doIncreaseCartItemQuantity,
+  doAddLocalShopListItem
+}) => {
   const prodDetail = { id: _id, name, price, images };
   const imageLink = images && images.length ? images[0] : `${DefaultImageSrc}`;
   return (
@@ -36,15 +40,22 @@ const ProductDetail = ({ prodDetail: { _id, name, price, images }, increaseQuant
                 urna sed turpis lacinia consectetur. Mauris dolor bibendum nibh consectetuer.
                 <br />
               </p>
-
               <div className="clearfix"></div>
-
               <button
                 type="button"
                 className="button"
-                onClick={() => increaseQuantity(prodDetail, 1)}
+                onClick={() => doIncreaseCartItemQuantity(prodDetail, 1)}
               >
-                Add to List
+                <i className="fa fa-shopping-cart" /> Add to cart
+              </button>{' '}
+              |{' '}
+              <button
+                className="button"
+                type="button"
+                style={{ backgroundColor: 'inherit', color: 'gray' }}
+                onClick={() => doAddLocalShopListItem(prodDetail)}
+              >
+                Add to list
               </button>
             </div>
           </div>

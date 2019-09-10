@@ -2038,7 +2038,7 @@ a.sidebar-btn span {
 }
 
 .shop-item .button {
-	padding: 8px 15px;
+	padding: 4px 8px;
 	margin-top: 3px;
 }
 
@@ -4120,7 +4120,7 @@ button.button,
 a.button {
 	background-color: #666;
 	top: 0;
-	padding: 10px 18px;
+	padding: 4px 8px;
 	color: #fff;
 	text-transform: uppercase;
 	position: relative;

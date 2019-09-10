@@ -7,6 +7,7 @@ import Widgets from '../psw';
 
 import { getProductDetail, clearProductDetail } from '../../actions/productActions';
 import { addLocalShopListItem } from '../../actions/shopListActions';
+import { increaseCartItemQuantity } from '../../actions/cartActions';
 
 class productDetailPage extends Component {
   componentDidMount() {
@@ -29,7 +30,6 @@ class productDetailPage extends Component {
         }
       });
     }
-
   }
 
   componentWillUnmount() {
@@ -37,9 +37,14 @@ class productDetailPage extends Component {
     dispatch(clearProductDetail());
   }
 
-  doIncreaseShopListItemQuantity = (prodDetail, differential) => {
+  doAddLocalShopListItem = prodDetail => {
     const { dispatch } = this.props;
-    dispatch(addLocalShopListItem(prodDetail, differential));
+    dispatch(addLocalShopListItem(prodDetail));
+  };
+
+  doIncreaseCartItemQuantity = (prodDetail, differential) => {
+    const { dispatch } = this.props;
+    dispatch(increaseCartItemQuantity(prodDetail, differential));
   };
 
   render() {
@@ -78,7 +83,8 @@ class productDetailPage extends Component {
           {prodDetail ? (
             <ProductDetail
               prodDetail={prodDetail}
-              increaseQuantity={this.doIncreaseShopListItemQuantity}
+              doIncreaseCartItemQuantity={this.doIncreaseCartItemQuantity}
+              doAddLocalShopListItem={this.doAddLocalShopListItem}
             />
           ) : (
             // todo handle product not available

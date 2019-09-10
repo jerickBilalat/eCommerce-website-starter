@@ -51,7 +51,7 @@ class CartPage extends Component {
     const { state } = this;
     event.preventDefault();
 
-    if (!this.courseFormIsValid()) {
+    if (!this.orderFromIsValid()) {
       return toast.error('Form is not valid');
     }
     if (state.formFields.message === '') {
@@ -72,7 +72,7 @@ class CartPage extends Component {
     history.push('/');
   };
 
-  courseFormIsValid = () => {
+  orderFromIsValid = () => {
     let isFormValid = true;
     const errors = {};
     const { formFields } = this.state;
