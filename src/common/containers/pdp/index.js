@@ -67,7 +67,7 @@ class productDetailPage extends Component {
                           <Link to="/">Home</Link>
                         </li>
                         <li>
-                          <Link to="/">Shop</Link>
+                          <Link to="/shop">Shop</Link>
                         </li>
                         <li>Product Detail</li>
                       </ul>

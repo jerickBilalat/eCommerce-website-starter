@@ -38,7 +38,7 @@ const Cart = ({
               ) : (
                 <tr>
                   <td>
-                    No items in cart. Click <Link to="/">Here</Link> to browse our products
+                    No items in cart. Click <Link to="/shop">Here</Link> to browse our products
                   </td>
                 </tr>
               )}
@@ -72,7 +72,7 @@ const Cart = ({
               ) : (
                 <tr>
                   <td>
-                    No items in cart. Click <Link to="/">Here</Link> to browse our products
+                    No items in cart. Click <Link to="/shop">Here</Link> to browse our products
                   </td>
                 </tr>
               )}

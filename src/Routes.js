@@ -1,3 +1,4 @@
+import HomePage from './common/containers/homepage';
 import ProductListPage from './common/containers/plp';
 import PrdouctDetailPage from './common/containers/pdp';
 import ShoppingListPage from './common/containers/slp';
@@ -10,8 +11,13 @@ export default [
     ...App,
     routes: [
       {
-        ...ProductListPage,
+        ...HomePage,
         path: '/',
+        exact: true
+      },
+      {
+        ...ProductListPage,
+        path: '/shop',
         exact: true
       },
       {

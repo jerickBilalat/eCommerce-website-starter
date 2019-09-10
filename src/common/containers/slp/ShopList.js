@@ -32,7 +32,7 @@ const ShopList = ({
               ) : (
                 <tr>
                   <td>
-                    No items in ShopList. Click <Link to="/">Here</Link> to browse our products
+                    No items in ShopList. Click <Link to="/shop">Here</Link> to browse our products
                   </td>
                 </tr>
               )}
@@ -65,7 +65,7 @@ const ShopList = ({
               ) : (
                 <tr>
                   <td>
-                    No items in ShopList. Click <Link to="/">Here</Link> to browse our products
+                    No items in ShopList. Click <Link to="/shop">Here</Link> to browse our products
                   </td>
                 </tr>
               )}

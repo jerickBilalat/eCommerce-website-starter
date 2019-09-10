@@ -159,7 +159,7 @@ class ShopListPage extends Component {
                         <Link to="/">Home</Link>
                       </li>
                       <li>
-                        <Link to="/">Shop</Link>
+                        <Link to="/shop">Shop</Link>
                       </li>
                       <li>Shopping List</li>
                     </ul>
