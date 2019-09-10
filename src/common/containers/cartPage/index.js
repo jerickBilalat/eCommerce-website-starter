@@ -16,6 +16,7 @@ import {
 import { fetchProducts } from '../../actions/productActions';
 import ScrollTo from '../../components/ScrollTo';
 
+import Header from '../header';
 import Cart from './cart';
 import OrderConfirm from './orderConfirm';
 
@@ -177,6 +178,7 @@ class CartPage extends Component {
   render() {
     return (
       <React.Fragment>
+        <Header />
         <div className="row">
           <div id="titlebar">
             <div className="container">

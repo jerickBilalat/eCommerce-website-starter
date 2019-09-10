@@ -7,6 +7,7 @@ import { addLocalShopListItem } from '../../actions/shopListActions';
 
 import ProductList from './productList';
 import PageSideWidget from '../psw';
+import Header from '../header';
 
 class ProductListPage extends Component {
   constructor(props) {
@@ -62,6 +63,7 @@ class ProductListPage extends Component {
     const { limit } = this.state;
     return (
       <React.Fragment>
+        <Header />
         <div className="row">
           <div id="titlebar">
             <div className="container">

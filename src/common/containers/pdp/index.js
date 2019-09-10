@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import ProductDetail from './productDetail';
 import Widgets from '../psw';
+import Header from '../header';
 
 import { getProductDetail, clearProductDetail } from '../../actions/productActions';
 import { addLocalShopListItem } from '../../actions/shopListActions';
@@ -53,6 +54,7 @@ class productDetailPage extends Component {
     } = this.props;
     return (
       <React.Fragment>
+        <Header />
         {prodDetail && (
           <div className="row">
             <div id="titlebar">

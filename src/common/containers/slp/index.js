@@ -11,10 +11,11 @@ import {
   deleteLocalShopListItem
 } from '../../actions/shopListActions';
 import { fetchProducts } from '../../actions/productActions';
-import {increaseCartItemQuantity} from '../../actions/cartActions';
+import { increaseCartItemQuantity } from '../../actions/cartActions';
 import ScrollTo from '../../components/ScrollTo';
 
 import ShopList from './ShopList';
+import Header from '../header';
 
 class ShopListPage extends Component {
   state = {
@@ -146,6 +147,7 @@ class ShopListPage extends Component {
   render() {
     return (
       <React.Fragment>
+        <Header />
         <div className="row">
           <div id="titlebar">
             <div className="container">

@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function Header({ match, cartItems }) {
-  const navigationLinks = [{ name: 'Shop', path: '/' }];
+  const navigationLinks = [{ name: 'Home', path: '/' }, { name: 'Shop', path: '/shop' }];
   return (
     <Fragment>
       <div className="row">
