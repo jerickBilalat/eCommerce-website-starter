@@ -11,7 +11,7 @@ import {
   deleteLocalShopListItem
 } from '../../actions/shopListActions';
 import { fetchProducts } from '../../actions/productActions';
-import { increaseCartItemQuantity } from '../../actions/cartActions';
+import { increaseCartItemQuantity, syncCart } from '../../actions/cartActions';
 import ScrollTo from '../../components/ScrollTo';
 
 import ShopList from './ShopList';
@@ -32,6 +32,7 @@ class ShopListPage extends Component {
     const { dispatch } = this.props;
     dispatch(fetchProducts(0, 1000, [], []));
     dispatch(getLocalShopListToStore());
+    dispatch(syncCart());
   }
 
   updateFormState = event => {
