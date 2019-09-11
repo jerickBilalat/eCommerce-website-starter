@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DefaultImageSrc from './shop-widget-02.jpg';
 
 const cartCardMobile = ({
   id,
@@ -19,7 +20,7 @@ const cartCardMobile = ({
           .filter(item => item.id === id)[0]
       : null;
   const images = cartItem && cartItem.images;
-  const imageLink = images && images.length ? images[2] : 'images/shop-widget-02.jpg';
+  const imageLink = images && images.length ? images[2] : `${DefaultImageSrc}`;
   return (
     <React.Fragment>
       <tr className="st-space">
