@@ -2,7 +2,7 @@
 
 A starter template for a server side rendered single page eCommerce application built with React, Redux, and React-Router 4 libraries and [Razzle](https://github.com/jaredpalmer/razzle) framework to simplify SSR configuration. See the alternate SSR version in the Getting Started section if interested in the manual SSR Node and Webpack configuration of this project
 
-Demo: [Click to see DEMO](https://ssrshop.herokuapp.com/)
+Demo: [Click to see DEMO](https://razzlessrshop.herokuapp.com/)
 
 ## Getting Started
 
