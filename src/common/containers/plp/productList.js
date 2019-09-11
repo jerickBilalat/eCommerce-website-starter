@@ -6,7 +6,7 @@ const ProductList = ({ toShop, doIncreaseShopListItemQuantity }) => {
     toShop
       ? toShop.map(item => (
           <ProductCard
-            key={`${item._id}`} // eslint-disable-line no-underscore-dangle
+            key={`${item._id}${Math.random()}`} // eslint-disable-line no-underscore-dangle
             productItem={{ ...item }}
             doIncreaseShopListItemQuantity={doIncreaseShopListItemQuantity}
           />
