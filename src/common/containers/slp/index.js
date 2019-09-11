@@ -32,7 +32,6 @@ class ShopListPage extends Component {
     const { dispatch } = this.props;
     dispatch(fetchProducts(0, 1000, [], []));
     dispatch(getLocalShopListToStore());
-    dispatch(syncCart());
   }
 
   updateFormState = event => {
