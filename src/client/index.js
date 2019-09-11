@@ -6,7 +6,6 @@ import { renderRoutes } from 'react-router-config';
 import configureStore from '../common/store/configureStore';
 import Routes from '../Routes';
 
-console.log(window.__PRELOADED_STATE__);
 const store = configureStore(window.__PRELOADED_STATE__); // eslint-disable-line
 
 hydrate(
