@@ -18,19 +18,45 @@ const Home = props => {
                 <li>React-Router 4</li>
                 <li>Redux</li>
                 <li>
-                  <a href="http://www.vasterad.com/themes/reneva/">Revena</a> Html and CSS template
-                  built with Bootstrap
+                  <a
+                    href="http://www.vasterad.com/themes/reneva/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Revena
+                  </a>{' '}
+                  Html and CSS template built with Bootstrap
                 </li>
               </ul>
               <p>Features</p>
               <ul>
-                <li>React Server Side Rendering built on top of <a href="https://github.com/jaredpalmer/razzle">Razzle</a> Framework</li>
+                <li>
+                  React Server Side Rendering built on top of{' '}
+                  <a
+                    href="https://github.com/jaredpalmer/razzle"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Razzle
+                  </a>{' '}
+                  Framework
+                </li>
                 <li>Single Page Applicaton</li>
                 <li>Product Listing</li>
                 <li>Shopping List</li>
                 <li>Guest Cart</li>
                 <li>Checkout</li>
               </ul>
+              <p>
+                Source Code:{' '}
+                <a
+                  href="https://github.com/jerickBilalat/eCommerce-website-starter.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </p>
             </div>
             <Link to="/shop" className="button border">
               Go to Shop
@@ -43,9 +69,22 @@ const Home = props => {
           <div className="info-banner">
             <div className="info-content">
               <h3>Administration Panel</h3>
-              <p>See also the <a href="http://shop-admin.surge.sh/">Administration Panel</a> Web app that complements this project</p>
+              <p>
+                See also the{' '}
+                <a href="http://shop-admin.surge.sh/" target="_blank" rel="noopener noreferrer">
+                  Administration Panel
+                </a>{' '}
+                Web app that complements this project
+              </p>
             </div>
-            <a className="button border" href="http://shop-admin.surge.sh/">Go to Admin Panel</a>
+            <a
+              className="button border"
+              href="http://shop-admin.surge.sh/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Go to Admin Panel
+            </a>
             <div className="clearfix" />
           </div>
         </div>
