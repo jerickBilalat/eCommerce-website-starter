@@ -24,7 +24,7 @@ export default function(req, store, context) {
       <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta charSet='utf-8' />
-          <title>Razzle Redux Example</title>
+          <title>eCommerce Website Starter</title>
           <meta name="viewport" content="width=device-width, initial-scale=1">
           ${assets.client.css ? `<link rel="stylesheet" href="${assets.client.css}">` : ''}
             ${
