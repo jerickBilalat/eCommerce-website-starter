@@ -7,7 +7,8 @@
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "prestart:prod": "yarn build",
-    "start:prod": "NODE_ENV=production node build/server.js"
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "heroku-postbuild": "yarn build"
   },
   "dependencies": {
     "axios": "^0.19.0",
