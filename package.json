@@ -3,11 +3,12 @@
   "version": "3.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "razzle start",
+    "dev": "razzle start",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "prestart:prod": "yarn build",
     "start:prod": "NODE_ENV=production node build/server.js",
+    "start": "NODE_ENV=production node build/server.js",
     "heroku-postbuild": "yarn build"
   },
   "dependencies": {
