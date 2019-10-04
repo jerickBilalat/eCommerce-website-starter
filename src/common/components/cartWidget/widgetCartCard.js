@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const widgetCartCard = ({ id, name, quantity, removeItem }) => {
+const widgetCartCard = ({ id, name, quantity, doRemoveItem }) => {
   return (
     <ul className="cart-items">
       <li>
@@ -13,7 +13,7 @@ const widgetCartCard = ({ id, name, quantity, removeItem }) => {
             type="button"
             style={{ margin: 0, border: 'none' }}
             className="item-remove"
-            onClick={() => removeItem(id)}
+            onClick={() => doRemoveItem(id)}
           >
             <i className="fa fa-remove" />
           </button>
