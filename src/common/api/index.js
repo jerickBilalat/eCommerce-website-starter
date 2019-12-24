@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://minnesotarec.herokuapp.com/';
+const API_BASE_URL = 'https://shop-mock-api.herokuapp.com/';
 
 const client = axios.create({
   baseURL: API_BASE_URL
