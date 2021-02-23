@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import FlashMessage from '../../components/FlashMessage';
+import DefaultImageSrc from '../../assets/images/default_550x481.png';
+
 import {
   clearShopList,
   flashMessage,
@@ -11,7 +13,7 @@ import {
   deleteLocalShopListItem
 } from '../../actions/shopListActions';
 import { fetchProducts } from '../../actions/productActions';
-import { increaseCartItemQuantity, syncCart } from '../../actions/cartActions';
+import { increaseCartItemQuantity } from '../../actions/cartActions';
 import ScrollTo from '../../components/ScrollTo';
 
 import ShopList from './ShopList';
