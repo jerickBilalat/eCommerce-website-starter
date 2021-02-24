@@ -55,7 +55,7 @@ class CartPage extends Component {
     if (!this.orderFromIsValid()) {
       return toast.error('Form is not valid');
     }
-    if (state.formFields.message === '') {
+    if (state.formFields.message !== '') {
       const formFields = { ...state.formFields };
       this.setState({ formFields });
     }

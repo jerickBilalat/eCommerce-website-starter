@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DefaultImageSrc from './shop-widget-02.jpg';
+import DefaultImageSrc from '../../assets/images/default_90x90.png';
 
 const shopListCardMobile = ({
   id,
@@ -19,7 +19,7 @@ const shopListCardMobile = ({
           .filter(item => item.id === id)[0]
       : null;
   const images = shopListItem && shopListItem.images;
-  const imageLink = images && images.length ? images[2] : `${DefaultImageSrc}`;
+  const imageLink = images && images.length ? images[0] : `${DefaultImageSrc}`;
   return (
     <React.Fragment>
       <tr className="st-space">

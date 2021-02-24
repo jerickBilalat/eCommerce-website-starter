@@ -32,7 +32,7 @@ function fetchProductsStarted() {
   };
 }
 
-export function fetchProducts(skip = 0, limit = 3, filters = [], prevState = []) {
+export function fetchProducts(skip = 0, limit = 3, filters = {}, prevState = []) {
   return dispatch => {
     dispatch(fetchProductsStarted());
 
@@ -40,12 +40,13 @@ export function fetchProducts(skip = 0, limit = 3, filters = [], prevState = [])
       .fetchProducts({ skip, limit, filters })
       .then(resp => {
         const data = {
-          articles: [...prevState, ...resp.data.articles],
-          size: resp.data.size
+          articles: [...prevState, ...resp.data],
+          size: prevState.length + resp.data.length
         };
         return dispatch(fetchProductsSucceeded(data));
       })
       .catch(err => {
+        // todo show error in ui
         return dispatch(fetchProductsFailed(err.message));
       });
   };
@@ -53,13 +54,16 @@ export function fetchProducts(skip = 0, limit = 3, filters = [], prevState = [])
 
 export function getProductDetail(id) {
   return dispatch => {
-    return api.fetchSingleFilteredProduct(id).then(res => {
-      const product = res.data[0];
-      return dispatch({
-        type: GET_PRODUCT_DETAIL,
-        payload: product
-      });
-    });
+    return api
+      .fetchSingleFilteredProduct(id)
+      .then(res => {
+        const product = res.data;
+        return dispatch({
+          type: GET_PRODUCT_DETAIL,
+          payload: product
+        });
+      })
+      .catch(e => new Error(e));
   };
 }
 export function clearProductDetail() {

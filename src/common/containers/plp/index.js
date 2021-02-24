@@ -13,14 +13,9 @@ class ProductListPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      limit: 3,
+      limit: 6,
       skip: 0,
-      filters: {
-        brand: [],
-        frets: [],
-        wood: [],
-        price: []
-      }
+      filters: {}
     };
   }
 
@@ -130,7 +125,7 @@ class ProductListPage extends Component {
 }
 
 const loadData = async store => {
-  await store.dispatch(fetchProducts());
+  await store.dispatch(fetchProducts(0, 6));
 };
 
 const mapStateToProps = state => {

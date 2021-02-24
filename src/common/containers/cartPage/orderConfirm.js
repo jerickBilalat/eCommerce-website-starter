@@ -38,7 +38,7 @@ const orderForm = ({
               <address>
                 <strong>Message:</strong>
                 <br />
-                <p>{!message && 'none'}</p>
+                <p>{message || 'none'}</p>
               </address>
             </div>
           </div>
