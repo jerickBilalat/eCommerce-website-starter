@@ -34,13 +34,13 @@ const footer = () => {
 
             <ul className="footer-links">
               <li>
-                <a href="http://www.jerickbilalat.com">Portfolio</a>
+                <a href="http://www.jbilalat.com">Portfolio</a>
               </li>
               <li>
-                <a href="http://www.jerickbilalat.com">Blog</a>
+                <a href="http://www.jbilalat.com">Blog</a>
               </li>
               <li>
-                <a href="http://www.jerickbilalat.com">Contact</a>
+                <a href="http://www.jbilalat.com">Contact</a>
               </li>
             </ul>
           </div>
