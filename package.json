@@ -9,12 +9,16 @@
     "prestart:prod": "yarn build",
     "start:prod": "NODE_ENV=production node build/server.js",
     "start": "NODE_ENV=production node build/server.js",
-    "heroku-postbuild": "yarn build"
+    "heroku-postbuild": "yarn build",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "dependencies": {
+    "@testing-library/cypress": "^7.0.4",
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
     "currency.js": "^1.2.2",
+    "cypress": "^6.5.0",
     "express": "^4.15.2",
     "prop-types": "^15.6.0",
     "qs": "^6.4.0",
