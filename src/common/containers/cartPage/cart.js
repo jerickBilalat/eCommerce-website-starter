@@ -22,62 +22,50 @@ const Cart = ({
     <React.Fragment>
       <div className="row">
         <div className="col-md-12">
-          <table className="stacktable small-only">
-            <tbody>
-              {cartItems.length ? (
-                cartItems.map(item => (
-                  <CartCardMobile
-                    key={item.id}
-                    {...item}
-                    products={products}
-                    deleteCartItem={deleteCartItem}
-                    increaseQuantity={increaseQuantity}
-                    decreaseQuantity={decreaseQuantity}
-                  />
-                ))
-              ) : (
+          {cartItems.length ? (
+            cartItems.map(item => (
+              <CartCardMobile
+                key={item.id}
+                {...item}
+                products={products}
+                deleteCartItem={deleteCartItem}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+              />
+            ))
+          ) : (
+            <table className="stacktable small-only">
+              <tbody>
                 <tr>
                   <td>
                     No items in cart. Click <Link to="/shop">Here</Link> to browse our products
                   </td>
                 </tr>
-              )}
-            </tbody>
-          </table>
-
-          <table className="cart-table responsive-table stacktable large-only">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-                <th />
-              </tr>
-            </thead>
-
-            <tbody>
-              {cartItems.length ? (
-                cartItems.map(item => (
-                  <CartCard
-                    key={item.id}
-                    {...item}
-                    products={products}
-                    deleteCartItem={deleteCartItem}
-                    increaseQuantity={increaseQuantity}
-                    decreaseQuantity={decreaseQuantity}
-                  />
-                ))
-              ) : (
+              </tbody>
+            </table>
+          )}
+          {cartItems.length ? (
+            cartItems.map(item => (
+              <CartCard
+                key={item.id}
+                {...item}
+                products={products}
+                deleteCartItem={deleteCartItem}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+              />
+            ))
+          ) : (
+            <table className="cart-table responsive-table stacktable large-only">
+              <tbody>
                 <tr>
                   <td>
                     No items in cart. Click <Link to="/shop">Here</Link> to browse our products
                   </td>
                 </tr>
-              )}
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
 
